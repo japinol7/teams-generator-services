@@ -1,7 +1,7 @@
 Teams Generator Services
 =======================================
 
-Some microservices related to the generation of RPG teams.
+Some microservices related of the generation of RPG teams.
 
 Services:
 * add-contestants

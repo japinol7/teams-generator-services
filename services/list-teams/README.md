@@ -1,4 +1,4 @@
-List Contestants Service
+List Teams Service
 =======================================
 
 This microservice lists generated teams.
