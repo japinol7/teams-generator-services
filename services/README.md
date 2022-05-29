@@ -7,7 +7,7 @@ Services:
 * add-contestants
   * Adds contestants, so they can be chosen for a team.
 * clear-contestants
-  * Removes all contestants that are not part of a team.
+  * This microservice removes all contestants or all contestants without a team.
 * clear-teams
   * Deletes all generated teams.
 * generate-teams
