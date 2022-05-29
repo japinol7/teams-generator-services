@@ -9,6 +9,7 @@ class EventController:
     def get_contestants_to_add(self):
         res = self.get_contestants_to_add_raw()
         if isinstance(res, list):
+            res = (x.strip() for x in res if len(x.strip()) > 0)
             res = sorted(list(set(res)))
         return res
 
