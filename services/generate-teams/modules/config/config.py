@@ -1,6 +1,6 @@
 from modules.version import version
 
-SERVICE_NAME = 'teams_generator'
+SERVICE_NAME = 'teams-generator-generate-teams'
 
 N_TEAMS_MAX = 50
 N_MEMBERS_MAX = 15

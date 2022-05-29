@@ -1,6 +1,6 @@
 from modules.version import version
 
-SERVICE_NAME = 'teams-generator-clear-teams'
+SERVICE_NAME = 'teams-generator-reset-teams-generator'
 
 BODY_CONTESTANTS_KEY = 'names'
 BODY_TEAMS_KEY = 'teams'

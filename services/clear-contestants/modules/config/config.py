@@ -1,6 +1,6 @@
 from modules.version import version
 
-SERVICE_NAME = 'contestants-generator-clear-contestants'
+SERVICE_NAME = 'teams-generator-clear-contestants'
 
 BODY_CONTESTANTS_KEY = 'names'
 BODY_ERRORS_KEY = 'errors'
