@@ -1,3 +1,5 @@
+from modules.config.config import N_MEMBERS_MAX
+
 
 class EventController:
     def __init__(self, event):
@@ -17,5 +19,7 @@ class EventController:
     def validate_input_values(contestants_to_add):
         res = True
         if not isinstance(contestants_to_add, list):
+            res = False
+        elif len(contestants_to_add) > N_MEMBERS_MAX:
             res = False
         return res

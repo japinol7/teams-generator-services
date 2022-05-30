@@ -15,13 +15,12 @@ from modules.tools.logger.logger import logger as log
 from modules.tools.utils.utils import read_file_as_string
 from modules.log_validation import log_validation
 
+config_parser = ConfigParser()
+s3 = S3Client()
+
 
 def lambda_handler(event, context):
     log.info(LOG_START_SERVICE_MSG)
-
-    config_parser = ConfigParser()
-    s3 = S3Client()
-
     controller = EventController(event)
     num_teams = controller.get_teams_to_calculate()
     num_members = controller.get_num_members_for_team()

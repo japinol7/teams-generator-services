@@ -13,17 +13,16 @@ from modules.tools.logger.logger import logger as log
 from modules.tools.utils.utils import read_file_as_string
 from modules.log_validation import log_validation
 
+config_parser = ConfigParser()
+s3 = S3Client()
+
 
 def lambda_handler(event, context):
     log.info(LOG_START_SERVICE_MSG)
-
-    config_parser = ConfigParser()
-    s3 = S3Client()
-
     controller = EventController(event)
     contestants_to_add = controller.get_contestants_to_add()
     if not controller.validate_input_values(contestants_to_add):
-        error_msg = log_validation.log_wrong_input_values(controller)
+        error_msg = log_validation.log_wrong_input_values(controller, contestants_to_add)
         log.info(LOG_END_SERVICE_MSG)
         error_msg_json = json.dumps(error_msg)
         return {

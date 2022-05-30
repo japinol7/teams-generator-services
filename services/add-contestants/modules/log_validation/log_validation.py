@@ -1,9 +1,14 @@
 from modules.config.config import BODY_ERRORS_KEY, INPUT_ERROR_TAG, INPUT_ERRORS_KEY, ERROR_INPUT_VALUES
+from modules.config.config import N_MEMBERS_MAX, ERROR_MAX_MSG
 from modules.tools.logger.logger import logger as log
 
 
-def log_wrong_input_values(controller):
-    error_msg = ERROR_INPUT_VALUES + f" Asked for addContestants: {controller.get_is_list_all_contestants()}."
+def log_wrong_input_values(controller, contestants_to_add):
+    if len(contestants_to_add) > N_MEMBERS_MAX:
+        error_msg = ERROR_MAX_MSG
+    else:
+        error_msg = ERROR_INPUT_VALUES
+    error_msg = f"{error_msg} Asked for addContestants: {controller.get_contestants_to_add()}."
     log.info(error_msg)
     return {BODY_ERRORS_KEY: {
                 INPUT_ERRORS_KEY: [[INPUT_ERROR_TAG, error_msg]],

@@ -13,13 +13,12 @@ from modules.tools.logger.logger import logger as log
 from modules.tools.utils.utils import read_file_as_string
 from modules.log_validation import log_validation
 
+config_parser = ConfigParser()
+s3 = S3Client()
+
 
 def lambda_handler(event, context):
     log.info(LOG_START_SERVICE_MSG)
-
-    config_parser = ConfigParser()
-    s3 = S3Client()
-
     controller = EventController(event)
     is_reset_teams_generator = controller.get_is_reset_teams_generator()
     if not controller.validate_input_values(is_reset_teams_generator):
