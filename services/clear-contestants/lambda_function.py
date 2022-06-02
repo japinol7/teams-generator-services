@@ -20,18 +20,29 @@ def lambda_handler(event, context):
     log.info(LOG_START_SERVICE_MSG)
     controller = EventController(event)
     is_clear_all_contestants = controller.get_is_clear_all_contestants()
-    if not controller.validate_input_values(is_clear_all_contestants):
+    is_clear_contestants_without_team = controller.get_is_clear_contestants_without_team()
+    log.info(f"Input options: {controller.keys}")
+    if not controller.validate_input_values(is_clear_all_contestants, is_clear_contestants_without_team):
         error_msg = log_validation.log_wrong_input_values(controller)
         log.info(LOG_END_SERVICE_MSG)
         error_msg_json = json.dumps(error_msg)
-        s3.upload_contestants(resource_name=config_parser['teams_gen_file_contestants'], body=error_msg_json)
         return {
             'statusCode': 200,
             'body': error_msg_json,
         }
 
     res_file_contestants = config_parser['teams_gen_file_contestants']
-    body = {BODY_CONTESTANTS_KEY: []}
+
+    if is_clear_contestants_without_team:
+        names = set(s3.get_contestants(res_file_contestants))
+        res_file_teams = config_parser['teams_gen_file_teams']
+        teams, _ = s3.get_teams(res_file_teams)
+        names_in_teams = {name for sublist in teams.values() for name in sublist}
+        names_body = sorted(list(names & names_in_teams))
+        body = {BODY_CONTESTANTS_KEY: names_body}
+    else:
+        body = {BODY_CONTESTANTS_KEY: []}
+
     body_json = json.dumps(body)
     s3.upload_contestants(res_file_contestants, body=body_json)
     log.info(LOG_END_SERVICE_MSG)

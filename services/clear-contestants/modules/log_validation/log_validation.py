@@ -3,7 +3,13 @@ from modules.tools.logger.logger import logger as log
 
 
 def log_wrong_input_values(controller):
-    error_msg = ERROR_INPUT_VALUES + f" Asked for clearAllContestants: {controller.get_is_clear_all_contestants()}."
+    if 'clearAllContestants' in controller.keys and 'clearContestantsWithoutTeam' in controller.keys:
+        error_msg = f"{ERROR_INPUT_VALUES} Asked for both clearAllContestants and clearContestantsWithoutTeam options. " \
+                    f"Choose only one."
+    else:
+        error_msg = f"{ERROR_INPUT_VALUES} clearAllContestants and clearContestantsWithoutTeam keys have to be set " \
+                    f"to a boolean value!."
+
     log.info(error_msg)
     return {BODY_ERRORS_KEY: {
                 INPUT_ERRORS_KEY: [[INPUT_ERROR_TAG, error_msg]],
