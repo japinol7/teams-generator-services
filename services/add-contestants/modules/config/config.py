@@ -2,7 +2,7 @@ from modules.version import version
 
 SERVICE_NAME = 'teams-generator-add-contestants'
 
-N_MEMBERS_MAX = 50
+N_MEMBERS_MAX = 100
 
 BODY_CONTESTANTS_KEY = 'names'
 BODY_CONTESTANTS_ADDED_KEY = 'added names'

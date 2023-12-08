@@ -54,6 +54,6 @@ def lambda_handler(event, context):
 
 
 if __name__ == "__main__":
-    event_json = read_file_as_string('events/event.json')
+    event_json = read_file_as_string('events/event_medium_size.json')
     res = lambda_handler(event=json.loads(event_json), context=None)
     log.info(res['body'])
