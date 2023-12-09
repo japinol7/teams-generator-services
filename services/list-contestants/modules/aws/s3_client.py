@@ -21,3 +21,11 @@ class S3Client:
         if sorted_:
             names = sorted(names)
         return names
+
+    def get_teams(self, resource_name):
+        log.info("Get teams from bucket")
+        response = self.s3.get_object(Bucket=self.bucket, Key=resource_name)
+        content = response['Body']
+        content_json = json.loads(content.read())
+        return (content_json.get('teams', {}),
+                content_json.get('errors', {}))

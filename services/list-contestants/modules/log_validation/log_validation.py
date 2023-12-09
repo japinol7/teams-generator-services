@@ -1,9 +1,14 @@
-from modules.config.config import BODY_ERRORS_KEY, INPUT_ERROR_TAG, INPUT_ERRORS_KEY, ERROR_INPUT_VALUES
+from modules.config.config import BODY_ERRORS_KEY, INPUT_ERROR_TAG, INPUT_ERRORS_KEY
 from modules.tools.logger.logger import logger as log
 
 
 def log_wrong_input_values(controller):
-    error_msg = ERROR_INPUT_VALUES + f" Asked for listAllContestants: {controller.get_is_list_all_contestants()}."
+    if controller.error_msg:
+        error_msg = f"{controller.error_msg}"
+    else:
+        error_msg = ("listAllContestants, listContestantsWithoutTeam and listContestantsInATeam "
+                     "keys have to be set to a boolean value!")
+
     log.info(error_msg)
     return {BODY_ERRORS_KEY: {
                 INPUT_ERRORS_KEY: [[INPUT_ERROR_TAG, error_msg]],

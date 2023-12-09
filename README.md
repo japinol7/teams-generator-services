@@ -34,15 +34,17 @@ This is a recommended basic flow to use these services:
 <br /> <br /> <br />
 
 
-Additionally, if you need to replace one contestant with another one
+#### Usage - A bit more
+
+Additionally, if you need to replace one contestant with another one <br />
 after the teams have been generated:
 
 * Replace one or more contestants
   * service: replace-contestants
     * key: replaceContestants
 
-Note that is up to you whether you allow to replace a fallen member with another one once <br />
-the campaign has started.
+Note that is up to you whether you allow to replace a fallen member <br /> 
+with another one once the campaign has started.
 
 * List all generated teams
   * service: list-teams

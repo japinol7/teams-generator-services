@@ -1,3 +1,5 @@
 {
-  "listAllContestants": true
+  "listAllContestants": true,
+  "listContestantsWithoutTeam": false,
+  "listContestantsInATeam": false
 }
