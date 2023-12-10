@@ -22,6 +22,7 @@ def lambda_handler(event, context):
     is_clear_all_contestants = controller.get_is_clear_all_contestants()
     is_clear_contestants_without_team = controller.get_is_clear_contestants_without_team()
     log.info(f"Input options: {controller.keys}")
+
     if not controller.validate_input_values(is_clear_all_contestants, is_clear_contestants_without_team):
         error_msg = log_validation.log_wrong_input_values(controller)
         log.info(LOG_END_SERVICE_MSG)

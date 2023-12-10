@@ -24,8 +24,8 @@ def get_contestants():
 
 def get_team_members():
     res_file_teams = config_parser['teams_gen_file_teams']
-    teams, errors = s3.get_teams(res_file_teams)
-    contestants_in_a_team = {member for members in teams.values() for member in members}
+    teams, _ = s3.get_teams(res_file_teams)
+    contestants_in_a_team = {member for sublist in teams.values() for member in sublist}
     return contestants_in_a_team
 
 

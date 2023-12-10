@@ -9,7 +9,7 @@ Event keys:
 * listAllContestants
   * Lists all contestants, whether they are in a team or not.
 
-* listContestantsNotInATeam 
+* listContestantsWithoutTeam 
   * Lists contestants that still do not have a team.
 
 * listContestantsInATeam 

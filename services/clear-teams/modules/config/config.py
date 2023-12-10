@@ -2,6 +2,8 @@ from modules.version import version
 
 SERVICE_NAME = 'teams-generator-clear-teams'
 
+EVENT_KEYS = ['clearAllTeams']
+
 BODY_TEAMS_KEY = 'teams'
 BODY_ERRORS_KEY = 'errors'
 

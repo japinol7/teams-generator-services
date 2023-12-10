@@ -8,7 +8,6 @@ def log_wrong_input_values(controller, contestants_to_add):
         error_msg = ERROR_MAX_MSG
     else:
         error_msg = ERROR_INPUT_VALUES
-    error_msg = f"{error_msg} Asked for addContestants: {controller.get_contestants_to_add()}."
     log.info(error_msg)
     return {BODY_ERRORS_KEY: {
                 INPUT_ERRORS_KEY: [[INPUT_ERROR_TAG, error_msg]],

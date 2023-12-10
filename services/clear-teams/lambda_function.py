@@ -20,6 +20,8 @@ def lambda_handler(event, context):
     log.info(LOG_START_SERVICE_MSG)
     controller = EventController(event)
     is_clear_all_teams = controller.get_is_clear_all_teams()
+    log.info(f"Input options: {controller.keys}")
+
     if not controller.validate_input_values(is_clear_all_teams):
         error_msg = log_validation.log_wrong_input_values(controller)
         log.info(LOG_END_SERVICE_MSG)
