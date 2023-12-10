@@ -1,4 +1,4 @@
 {
-  "clearContestantsWithoutTeam": true,
-  "clearAllContestants": false
+  "clearAllContestants": true,
+  "clearContestantsWithoutTeam": false
 }
