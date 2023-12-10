@@ -37,7 +37,7 @@ Some microservices related of the generation of RPG teams.
 * list-contestants
   * listAllContestants
     * Lists all contestants, whether they are in a team or not.
-  * listContestantsNotInATeam 
+  * listContestantsWithoutTeam 
     * Lists contestants that still do not have a team.
   * listContestantsInATeam 
     * Lists contestants that belong to a team. <br />
