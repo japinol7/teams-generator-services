@@ -21,6 +21,8 @@ def lambda_handler(event, context):
     log.info(LOG_START_SERVICE_MSG)
     controller = EventController(event)
     is_reset_teams_generator = controller.get_is_reset_teams_generator()
+    log.info(f"Input options: {controller.keys}")
+
     if not controller.validate_input_values(is_reset_teams_generator):
         error_msg = log_validation.log_wrong_input_values(controller)
         log.info(LOG_END_SERVICE_MSG)

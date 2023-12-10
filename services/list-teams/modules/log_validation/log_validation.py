@@ -3,9 +3,8 @@ from modules.tools.logger.logger import logger as log
 
 
 def log_wrong_input_values(controller):
-    error_msg = ERROR_INPUT_VALUES + f" Asked for listAllTeams: {controller.get_is_list_all_teams()}."
-    log.info(error_msg)
+    log.info(ERROR_INPUT_VALUES)
     return {BODY_ERRORS_KEY: {
-                INPUT_ERRORS_KEY: [[INPUT_ERROR_TAG, error_msg]],
+                INPUT_ERRORS_KEY: [[INPUT_ERROR_TAG, ERROR_INPUT_VALUES]],
                 }
             }
