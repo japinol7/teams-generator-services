@@ -2,9 +2,16 @@ Teams Generator Services
 =======================================
 
 Some microservices related to the generation of RPG teams.
-This project uses AWS. <br /> <br />
+This project uses AWS S3 and System Params. <br /> <br />
 
-See the readme.md file on Services for more details.
+  Disclaimer: These services are meant as simple examples of <br />  
+  AWS lambda services. The state of the system is persisted <br />
+  using json files, one for the contestants and another one <br />
+  for the generated teams. <br />
+  Therefore, this solution is not scalable and has concurrency issues.
+<br /> <br />
+
+See the readme.md file on the Services readme file for more details.
 <br /> <br />
 
 
@@ -34,18 +41,28 @@ This is a recommended basic flow to use these services:
 <br /> <br /> <br />
 
 
-#### Usage - A bit more
+[//]: # (#### Usage - A bit more)
 
-Additionally, if you need to replace one contestant with another one <br />
-after the teams have been generated:
+[//]: # ()
+[//]: # (Additionally, if you need to replace one contestant with another one <br />)
 
-* Replace one or more contestants
-  * service: replace-contestants
-    * key: replaceContestants
+[//]: # (after the teams have been generated:)
 
-Note that is up to you whether you allow to replace a fallen member <br /> 
-with another one once the campaign has started.
+[//]: # ()
+[//]: # (* Replace one or more contestants)
 
-* List all generated teams
-  * service: list-teams
-    * key: listAllTeams
+[//]: # (  * service: replace-contestants)
+
+[//]: # (    * key: replaceContestants)
+
+[//]: # ()
+[//]: # (Note that is up to you whether you allow to replace a fallen member <br /> )
+
+[//]: # (with another one once the campaign has started.)
+
+[//]: # ()
+[//]: # (* List all generated teams)
+
+[//]: # (  * service: list-teams)
+
+[//]: # (    * key: listAllTeams)

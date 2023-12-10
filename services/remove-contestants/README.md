@@ -1,8 +1,16 @@
-List Teams Service
+Remove Contestants Service
 =======================================
 
-This microservice lists generated teams.
+This microservice remove one or more contestants that can be chosen for a team.
+If the contestants are already in a team, it will remove them from their team.
 It uses AWS.
+
+Event keys:
+
+* removeContestants
+  * Remove one or more contestants. <br />
+    This will also remove them from the team they belong.
+<br />  <br /> <br />
 <br />  <br />
 
 

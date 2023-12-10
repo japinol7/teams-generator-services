@@ -1,4 +1,4 @@
-from modules.config.config import N_MEMBERS_MAX
+from modules.config.config import N_CONTESTANTS_MAX
 
 
 class EventController:
@@ -23,6 +23,6 @@ class EventController:
         res = True
         if not isinstance(contestants_to_add, list):
             res = False
-        elif len(contestants_to_add) > N_MEMBERS_MAX:
+        elif len(contestants_to_add) > N_CONTESTANTS_MAX:
             res = False
         return res

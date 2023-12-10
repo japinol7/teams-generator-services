@@ -1,7 +1,15 @@
 Teams Generator Services
 =======================================
 
-Some microservices related of the generation of RPG teams.
+Some microservices related to the generation of RPG teams.
+<br /> <br />
+
+  Disclaimer: These services are meant as simple examples of <br />  
+  AWS lambda services. The state of the system is persisted <br />
+  using json files, one for the contestants and another one <br />
+  for the generated teams. <br />
+  Therefore, this solution is not scalable and has concurrency issues.
+<br /> <br />
 
 [//]: # (Services:)
 
@@ -48,7 +56,8 @@ Some microservices related of the generation of RPG teams.
   * listAllTeams: Lists all generated teams.
 
 * remove-contestants
-  * removeContestants: Remove one or more contestants.
+  * removeContestants: Remove one or more contestants. <br />
+    This will remove them from the team they belong.
 
 * replace-contestants
   * replaceContestants: Replace one or more contestants. <br />
