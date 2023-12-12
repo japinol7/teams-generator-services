@@ -1,5 +1,5 @@
 Teams Generator Services
-=======================================
+========================
 
 Some microservices related to the generation of RPG teams.
 <br /> <br />
@@ -11,20 +11,14 @@ Some microservices related to the generation of RPG teams.
   Therefore, this solution is not scalable and has concurrency issues.
 <br /> <br />
 
-[//]: # (Services:)
 
-[//]: # (* set-configuration)
-
-[//]: # (  * contestantsDatetimeWindow:)
-
-[//]: # (    * Set a datetime window. <br /> )
-
-[//]: # (      Contestants can only be added within this time window.)
+## Services available
 
 * add-contestants
   * addContestants:
     * Adds contestants, so they can be chosen for a team.
-    * Note: You can add as much as 100 contestants each time you execute it.
+    * Note: You can add as many as 100 contestants each time you execute it. <br />
+      Maximum number of total contestants: 2100 
 
 * clear-contestants
   * This microservice allows to:
@@ -58,17 +52,6 @@ Some microservices related to the generation of RPG teams.
 * remove-contestants
   * removeContestants: Remove one or more contestants. <br />
     This will remove them from the team they belong.
-
-[//]: # ()
-[//]: # (* replace-contestants)
-
-[//]: # (  * replaceContestants: Replace one or more contestants. <br />)
-
-[//]: # (    * If an old contestant is already in a team, <br />)
-
-[//]: # (      it replaces also this contestant in the team.)
-
-[//]: # (    * If a replacement contestant is already in a team, it returns an error.)
 
 * reset-teams-generator
   * resetTeamsGenerator: Reset all contestants to the default names <br /> 

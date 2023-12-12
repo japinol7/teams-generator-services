@@ -5,12 +5,12 @@ This microservice removes contestants. Two actions are allowed:
    * Remove all contestants.
    * Remove all contestants without a team.
 It uses AWS.
-<br />  <br />
+<br /> <br /> <br />
 
 
-### Create the Service Package 
+### Create the Service Package with one of these options
 
-#### 1. Create the package with dockerfile 
+#### Option 1. Create the package with dockerfile 
 
 Create a package of this service to upload to the lambda on AWS this way:
 * Execute this script from the lambda folder: <br />
@@ -21,7 +21,7 @@ Create a package of this service to upload to the lambda on AWS this way:
 lambda.zip
 
 
-#### 2. Create the package with a simple docker run.
+#### Option 2. Create the package with a simple docker run.
 
 Create a package of this service to upload to the lambda on AWS this way:
 * Execute this script from the lambda folder: <br />
@@ -32,7 +32,7 @@ Create a package of this service to upload to the lambda on AWS this way:
 lambda.zip
 
 
-#### 3. Create the package with a simple docker run. Windows version. 
+#### Option 3. Create the package with a simple docker run. Windows version. 
 
 This change is necessary because of limitations of Git Bash for Windows <br />
 when resolving paths., 
