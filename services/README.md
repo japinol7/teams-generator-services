@@ -59,11 +59,16 @@ Some microservices related to the generation of RPG teams.
   * removeContestants: Remove one or more contestants. <br />
     This will remove them from the team they belong.
 
-* replace-contestants
-  * replaceContestants: Replace one or more contestants. <br />
-    * If an old contestant is already in a team, <br />
-      it replaces also this contestant in the team.
-    * If a replacement contestant is already in a team, it returns an error.
+[//]: # ()
+[//]: # (* replace-contestants)
+
+[//]: # (  * replaceContestants: Replace one or more contestants. <br />)
+
+[//]: # (    * If an old contestant is already in a team, <br />)
+
+[//]: # (      it replaces also this contestant in the team.)
+
+[//]: # (    * If a replacement contestant is already in a team, it returns an error.)
 
 * reset-teams-generator
   * resetTeamsGenerator: Reset all contestants to the default names <br /> 
