@@ -8,7 +8,7 @@ Some microservices related to the generation of RPG teams.
   AWS lambda services. The state of the system is persisted <br />
   using json files, one for the contestants and another one <br />
   for the generated teams. <br />
-  Therefore, this solution is not scalable and has concurrency issues.
+  Therefore, this solution does not mean to be scalable nor concurrent.
 <br /> <br />
 
 
