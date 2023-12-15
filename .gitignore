@@ -124,15 +124,3 @@ ENV/
 
 # PyCharm
 .idea/
-
-# Others
-/projects/api_create/api_01/app/res/data/anime-offline-database.json
-/projects/api_create/api_01/app/tests/res/data/anime-offline-database.json
-/projects/music-lib-explorer/app/db/hover_share.sqlite
-/projects/various/do_not_make_public/api_LittleLemon__03/LittleLemon/LittleLemonDRF/migrations/0001_initial.py
-/projects/various/do_not_make_public/api_LittleLemon__03/LittleLemon/LittleLemonDRF/migrations/0002_rename_category_rating_user_and_more.py
-/projects/various/do_not_make_public/api_LittleLemon__03/LittleLemon/LittleLemonDRF/migrations/0003_rating_menuitem_id.py
-/projects/various/do_not_make_public/api_LittleLemon__04__prj/LittleLemon/notes.txt
-/projects/various/res/data/anime-offline-database.json
-/projects/various/do_not_make_public/msgspec_examples/geojson/canada.json
-survey_results_public__no_commit.csv
