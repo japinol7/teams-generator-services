@@ -38,3 +38,13 @@ This is a recommended basic flow to use these services:
     * key: numMembersForTeam: How many members for team.
     * Notice that this service is not accumulative. It always generates all the teams. <br />
       More info in the readme of the service.
+<br /> <br />
+
+
+## How to execute this lambda from a local development environment
+
+* Go to the lambda folder in your system
+* If you want to add additional debug info to the lambda response:<br>
+  $ export JAP_IS_ADD_DEBUG_INFO_TO_RESPONSE=true<br>
+* Execute the lambda function script:<br>
+  $ python lambda_function.py

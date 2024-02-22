@@ -6,6 +6,7 @@ from modules.config.config import (
     ERROR_TAG,
     LOG_END_SERVICE_MSG,
     LOG_START_SERVICE_MSG,
+    IS_ADD_DEBUG_INFO_TO_RESPONSE,
     )
 from modules.config.parser import ConfigParser
 from modules.controller.controller import EventController
@@ -48,6 +49,12 @@ def lambda_handler(event, context):
         # remove currently selected member names from the list of available names
         names = list(set(names) - set(names_sel))
         names_sel = []
+
+    if IS_ADD_DEBUG_INFO_TO_RESPONSE:
+        body['debug_info'] = {
+            'teamsToCalculate': num_teams,
+            'numMembersForTeam': num_members,
+            }
 
     body_json = json.dumps(body)
     s3.upload_teams(resource_name=config_parser['teams_gen_file_teams'], body=body_json)
