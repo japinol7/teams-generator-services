@@ -4,12 +4,12 @@ Teams Generator Services
 Some microservices related to the generation of RPG teams.
 This project uses AWS S3 and System Params. <br /> <br />
 
-  Disclaimer: These services are meant as simple examples of <br />  
-  AWS lambda services. The state of the system is persisted <br />
-  using json files, one for the contestants and another one <br />
-  for the generated teams. <br />
-  Therefore, this solution does not mean to be scalable nor concurrent.
-<br /> <br />
+	General version: 0.1.6
+	author: Joan A. Pinol
+	author_nickname: japinol
+	author_gitHub: japinol7
+	author_twitter: @japinol
+	Python requires: 3.12 or greater.
 
 See the readme.md file on the Services readme file for more details.
 <br /> <br />
