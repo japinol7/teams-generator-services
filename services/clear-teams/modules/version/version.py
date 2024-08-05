@@ -1,6 +1,6 @@
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 
 
 def get_version():
-    """Get service version."""
+    """Gets the service version."""
     return VERSION
