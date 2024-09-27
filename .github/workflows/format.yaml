@@ -27,7 +27,10 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: '[REF] Code formatted with Ruff'
-      - name: Test with pytest
+      - name: Install pytest
         run: |
           pip install pytest pytest-mock
-          python -m pytest
+      - name: Test with pytest all services using a shell script
+        run: |
+          chmod +x ./services/run_tests_all_services.sh
+          ./services/run_tests_all_services.sh

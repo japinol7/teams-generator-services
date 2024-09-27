@@ -9,6 +9,9 @@ Some microservices related to the generation of RPG teams.
   using json files, one for the contestants and another one <br />
   for the generated teams. <br />
   Therefore, this solution does not mean to be scalable nor concurrent.
+
+Note: You can run tests for all services with this script: <br />
+* $ ./run_tests_all_services.sh
 <br /> <br />
 
 
