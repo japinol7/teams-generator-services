@@ -5,7 +5,7 @@ from modules.config.config import (
     BODY_ERRORS_KEY,
     LOG_END_SERVICE_MSG,
     LOG_START_SERVICE_MSG,
-    )
+)
 from modules.config.parser import ConfigParser
 from modules.controller.controller import EventController
 from modules.aws.s3_client import S3Client
@@ -41,7 +41,7 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'headers': {'Content-Type': 'application/json'},
         'body': body_json,
-        }
+    }
 
 
 if __name__ == "__main__":

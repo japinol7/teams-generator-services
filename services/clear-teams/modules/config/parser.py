@@ -6,7 +6,7 @@ from modules.aws.ssm_client import SSMParamClient
 ConfigVars = namedtuple('config_vars', ['environ', 'ssm'])
 CONFIG_VARS = {
     'teams_gen_file_teams': ConfigVars('TEAMS_GEN_FILE_TEAMS', 'teams-gen-file-teams'),
-    }
+}
 
 
 class ConfigParser:
@@ -18,9 +18,7 @@ class ConfigParser:
         self._config = {}
         ssm = SSMParamClient()
         for cv, vals in CONFIG_VARS.items():
-            self._config.update({
-                    cv: os.environ.get(vals.environ) or ssm.get(vals.ssm)
-                    })
+            self._config.update({cv: os.environ.get(vals.environ) or ssm.get(vals.ssm)})
 
     def __getitem__(self, item):
         return self._config[item]

@@ -7,7 +7,7 @@ from modules.config.config import (
     BODY_ERRORS_KEY,
     LOG_END_SERVICE_MSG,
     LOG_START_SERVICE_MSG,
-    )
+)
 from modules.config.parser import ConfigParser
 from modules.controller.controller import EventController
 from modules.aws.s3_client import S3Client
@@ -28,8 +28,10 @@ def remove_contestants(contestants_to_remove):
     if len(names) < names_len_before:
         body_to_upload = {BODY_CONTESTANTS_KEY: names}
         body_json_to_upload = json.dumps(body_to_upload)
-        s3.upload_resource(resource_name=config_parser['teams_gen_file_contestants'],
-                           body=body_json_to_upload)
+        s3.upload_resource(
+            resource_name=config_parser['teams_gen_file_contestants'],
+            body=body_json_to_upload,
+        )
     else:
         log.info(f"Skip uploading contestants to bucket: No contestants to remove.")
 
@@ -41,16 +43,23 @@ def remove_team_members(contestants_to_remove):
 
     teams_after_remove = {}
     for k, v in teams.items():
-        teams_after_remove[k] = [name for name in v if name not in contestants_to_remove]
-    contestants_in_a_team_after = {member for sublist in teams_after_remove.values() for member in sublist}
+        teams_after_remove[k] = [
+            name for name in v if name not in contestants_to_remove
+        ]
+    contestants_in_a_team_after = {
+        member for sublist in teams_after_remove.values() for member in sublist
+    }
 
     if len(contestants_in_a_team_after) < len(contestants_in_a_team):
         body_to_upload = {BODY_TEAMS_KEY: teams_after_remove, BODY_ERRORS_KEY: error}
         body_to_upload = json.dumps(body_to_upload)
-        s3.upload_resource(resource_name=config_parser['teams_gen_file_teams'],
-                           body=body_to_upload)
+        s3.upload_resource(
+            resource_name=config_parser['teams_gen_file_teams'], body=body_to_upload
+        )
     else:
-        log.info(f"Skip uploading teams to bucket: No teams with contestants to remove.")
+        log.info(
+            f"Skip uploading teams to bucket: No teams with contestants to remove."
+        )
 
 
 def lambda_handler(event, context):
@@ -78,7 +87,7 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'headers': {'Content-Type': 'application/json'},
         'body': body_json,
-        }
+    }
 
 
 if __name__ == "__main__":

@@ -6,11 +6,14 @@ def log_wrong_input_values(controller):
     if controller.error_msg:
         error_msg = f"{controller.error_msg}"
     else:
-        error_msg = ("clearAllContestants and clearContestantsWithoutTeam "
-                     "keys have to be set to a boolean value!")
+        error_msg = (
+            "clearAllContestants and clearContestantsWithoutTeam "
+            "keys have to be set to a boolean value!"
+        )
 
     log.info(error_msg)
-    return {BODY_ERRORS_KEY: {
-                INPUT_ERRORS_KEY: [[INPUT_ERROR_TAG, error_msg]],
-                }
-            }
+    return {
+        BODY_ERRORS_KEY: {
+            INPUT_ERRORS_KEY: [[INPUT_ERROR_TAG, error_msg]],
+        }
+    }

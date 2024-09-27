@@ -6,7 +6,7 @@ from modules.config.config import (
     LOG_END_SERVICE_MSG,
     LOG_START_SERVICE_MSG,
     N_CONTESTANTS_MAX_TOTAL,
-    )
+)
 from modules.config.parser import ConfigParser
 from modules.controller.controller import EventController
 from modules.aws.s3_client import S3Client
@@ -25,7 +25,9 @@ def lambda_handler(event, context):
     log.info(f"Input options: {controller.keys}")
 
     if not controller.validate_input_values(contestants_to_add):
-        error_msg = log_validation.log_wrong_input_values(controller, contestants_to_add)
+        error_msg = log_validation.log_wrong_input_values(
+            controller, contestants_to_add
+        )
         log.info(LOG_END_SERVICE_MSG)
         error_msg_json = json.dumps(error_msg)
         return {
@@ -44,8 +46,10 @@ def lambda_handler(event, context):
     if len(names) > names_len_before:
         body_to_upload = {BODY_CONTESTANTS_KEY: names}
         body_json_to_upload = json.dumps(body_to_upload)
-        s3.upload_resource(resource_name=config_parser['teams_gen_file_contestants'],
-                           body=body_json_to_upload)
+        s3.upload_resource(
+            resource_name=config_parser['teams_gen_file_contestants'],
+            body=body_json_to_upload,
+        )
     else:
         log.info(f"Skip uploading names to bucket: No new names to add.")
 
@@ -56,7 +60,7 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'headers': {'Content-Type': 'application/json'},
         'body': body_json,
-        }
+    }
 
 
 if __name__ == "__main__":

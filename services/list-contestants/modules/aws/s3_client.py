@@ -6,7 +6,6 @@ from modules.tools.logger.logger import logger as log
 
 
 class S3Client:
-
     def __init__(self):
         self.s3 = boto3.client('s3')
         self.bucket = 'teams-generator'
@@ -27,5 +26,4 @@ class S3Client:
         response = self.s3.get_object(Bucket=self.bucket, Key=resource_name)
         content = response['Body']
         content_json = json.loads(content.read())
-        return (content_json.get('teams', {}),
-                content_json.get('errors', {}))
+        return (content_json.get('teams', {}), content_json.get('errors', {}))

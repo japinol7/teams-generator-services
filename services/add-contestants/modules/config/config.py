@@ -17,7 +17,9 @@ INPUT_ERRORS_KEY = 'Input Errors'
 INPUT_ERROR_TAG = 'Input Error'
 
 ERROR_TAG = 'Error'
-ERROR_INPUT_VALUES = "User Input Error. Missing addContestants key or not set to a list of names."
+ERROR_INPUT_VALUES = (
+    "User Input Error. Missing addContestants key or not set to a list of names."
+)
 ERROR_MAX_MSG = f"User input Error. Maximum {N_CONTESTANTS_MAX} contestants to add."
 
 LOG_START_SERVICE_MSG = f"Start service {SERVICE_NAME} version: {version.get_version()}"

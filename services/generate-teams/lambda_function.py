@@ -7,7 +7,7 @@ from modules.config.config import (
     LOG_END_SERVICE_MSG,
     LOG_START_SERVICE_MSG,
     IS_ADD_DEBUG_INFO_TO_RESPONSE,
-    )
+)
 from modules.config.parser import ConfigParser
 from modules.controller.controller import EventController
 from modules.aws.s3_client import S3Client
@@ -29,7 +29,9 @@ def lambda_handler(event, context):
         error_msg = log_validation.log_wrong_input_values(controller)
         log.info(LOG_END_SERVICE_MSG)
         error_msg_json = json.dumps(error_msg)
-        s3.upload_teams(resource_name=config_parser['teams_gen_file_teams'], body=error_msg_json)
+        s3.upload_teams(
+            resource_name=config_parser['teams_gen_file_teams'], body=error_msg_json
+        )
         return {
             'statusCode': 200,
             'body': error_msg_json,
@@ -44,7 +46,9 @@ def lambda_handler(event, context):
     for i in range(num_teams):
         team_name = f'Team {i + 1}'
         team = calc_team(team_name, names, names_sel, num_members)
-        body_key = BODY_TEAMS_KEY if team.get(team_name)[0] != ERROR_TAG else BODY_ERRORS_KEY
+        body_key = (
+            BODY_TEAMS_KEY if team.get(team_name)[0] != ERROR_TAG else BODY_ERRORS_KEY
+        )
         body[body_key].update(team)
         # remove currently selected member names from the list of available names
         names = list(set(names) - set(names_sel))
@@ -54,7 +58,7 @@ def lambda_handler(event, context):
         body['debug_info'] = {
             'teamsToCalculate': num_teams,
             'numMembersForTeam': num_members,
-            }
+        }
 
     body_json = json.dumps(body)
     s3.upload_teams(resource_name=config_parser['teams_gen_file_teams'], body=body_json)
@@ -63,7 +67,7 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'headers': {'Content-Type': 'application/json'},
         'body': body_json,
-        }
+    }
 
 
 if __name__ == "__main__":

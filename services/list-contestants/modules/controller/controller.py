@@ -53,21 +53,35 @@ class EventController:
             self.keys.add('listContestantsInATeam')
         return res
 
-    def validate_input_values(self, is_list_all_contestants, is_list_contestants_without_team,
-                              is_list_contestants_in_a_team):
+    def validate_input_values(
+        self,
+        is_list_all_contestants,
+        is_list_contestants_without_team,
+        is_list_contestants_in_a_team,
+    ):
         res = True
-        if 'listAllContestants' in self.keys and not isinstance(is_list_all_contestants, bool):
+        if 'listAllContestants' in self.keys and not isinstance(
+            is_list_all_contestants, bool
+        ):
             res = False
-        elif ('listContestantsWithoutTeam' in self.keys
-              and not isinstance(is_list_contestants_without_team, bool)):
+        elif 'listContestantsWithoutTeam' in self.keys and not isinstance(
+            is_list_contestants_without_team, bool
+        ):
             res = False
-        elif ('listContestantsInATeam' in self.keys
-              and not isinstance(is_list_contestants_in_a_team, bool)):
+        elif 'listContestantsInATeam' in self.keys and not isinstance(
+            is_list_contestants_in_a_team, bool
+        ):
             res = False
-        elif is_not_only_one_true([is_list_all_contestants,
-                                  is_list_contestants_without_team,
-                                  is_list_contestants_in_a_team]):
-            self.error_msg = (f"One and only one event key should be set to True. "
-                              f"Available event keys: {EVENT_KEYS}")
+        elif is_not_only_one_true(
+            [
+                is_list_all_contestants,
+                is_list_contestants_without_team,
+                is_list_contestants_in_a_team,
+            ]
+        ):
+            self.error_msg = (
+                f"One and only one event key should be set to True. "
+                f"Available event keys: {EVENT_KEYS}"
+            )
             res = False
         return res

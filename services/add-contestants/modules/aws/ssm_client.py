@@ -4,7 +4,6 @@ from modules.tools.logger.logger import logger as log
 
 
 class SSMParamClient:
-
     def __init__(self):
         self.ssm = boto3.client('ssm')
 

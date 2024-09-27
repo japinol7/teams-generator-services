@@ -5,7 +5,7 @@ from modules.config.config import (
     BODY_ERRORS_KEY,
     LOG_END_SERVICE_MSG,
     LOG_START_SERVICE_MSG,
-    )
+)
 from modules.config.parser import ConfigParser
 from modules.controller.controller import EventController
 from modules.aws.s3_client import S3Client
@@ -37,7 +37,10 @@ def lambda_handler(event, context):
     is_list_contestants_in_a_team = controller.get_is_list_contestants_in_a_team()
 
     if not controller.validate_input_values(
-            is_list_all_contestants, is_list_contestants_without_team, is_list_contestants_in_a_team):
+        is_list_all_contestants,
+        is_list_contestants_without_team,
+        is_list_contestants_in_a_team,
+    ):
         error_msg = log_validation.log_wrong_input_values(controller)
         log.info(LOG_END_SERVICE_MSG)
         error_msg_json = json.dumps(error_msg)
@@ -62,7 +65,7 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'headers': {'Content-Type': 'application/json'},
         'body': body_json,
-        }
+    }
 
 
 if __name__ == "__main__":

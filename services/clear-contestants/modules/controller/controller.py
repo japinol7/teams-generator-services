@@ -39,14 +39,24 @@ class EventController:
             self.keys.add('clearContestantsWithoutTeam')
         return res
 
-    def validate_input_values(self, is_clear_all_contestants, is_clear_contestants_without_team):
+    def validate_input_values(
+        self, is_clear_all_contestants, is_clear_contestants_without_team
+    ):
         res = True
-        if 'clearAllContestants' in self.keys and not isinstance(is_clear_all_contestants, bool):
+        if 'clearAllContestants' in self.keys and not isinstance(
+            is_clear_all_contestants, bool
+        ):
             res = False
-        elif 'clearContestantsWithoutTeam' in self.keys and not isinstance(is_clear_contestants_without_team, bool):
+        elif 'clearContestantsWithoutTeam' in self.keys and not isinstance(
+            is_clear_contestants_without_team, bool
+        ):
             res = False
-        elif is_not_only_one_true([is_clear_all_contestants, is_clear_contestants_without_team]):
-            self.error_msg = (f"One and only one event key should be set to True. "
-                              f"Available event keys: {EVENT_KEYS}")
+        elif is_not_only_one_true(
+            [is_clear_all_contestants, is_clear_contestants_without_team]
+        ):
+            self.error_msg = (
+                f"One and only one event key should be set to True. "
+                f"Available event keys: {EVENT_KEYS}"
+            )
             res = False
         return res

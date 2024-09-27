@@ -15,8 +15,12 @@ INPUT_ERRORS_KEY = 'Input Errors'
 INPUT_ERROR_TAG = 'Input Error'
 
 ERROR_TAG = 'Error'
-ERROR_INPUT_VALUES = "User Input Error. A clearAllTeams key has to be set to the boolean value: true!"
-ERROR_MAX_MSG = f"User input Error. Maximum {N_CONTESTANTS_REMOVE_MAX} contestants to remove."
+ERROR_INPUT_VALUES = (
+    "User Input Error. A clearAllTeams key has to be set to the boolean value: true!"
+)
+ERROR_MAX_MSG = (
+    f"User input Error. Maximum {N_CONTESTANTS_REMOVE_MAX} contestants to remove."
+)
 
 LOG_START_SERVICE_MSG = f"Start service {SERVICE_NAME} version: {version.get_version()}"
 LOG_END_SERVICE_MSG = f"End service {SERVICE_NAME}"

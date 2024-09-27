@@ -2,7 +2,11 @@ from modules.version import version
 
 SERVICE_NAME = 'teams-generator-list-contestants'
 
-EVENT_KEYS = ['listAllContestants', 'listContestantsWithoutTeam', 'listContestantsInATeam']
+EVENT_KEYS = [
+    'listAllContestants',
+    'listContestantsWithoutTeam',
+    'listContestantsInATeam',
+]
 
 BODY_CONTESTANTS_KEY = 'names'
 BODY_ERRORS_KEY = 'errors'
