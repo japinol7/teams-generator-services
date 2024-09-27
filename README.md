@@ -48,3 +48,4 @@ This is a recommended basic flow to use these services:
   $ export JAP_IS_ADD_DEBUG_INFO_TO_RESPONSE=true<br>
 * Execute the lambda function script:<br>
   $ python lambda_function.py
+  
