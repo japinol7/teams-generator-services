@@ -11,7 +11,7 @@ Some microservices related to the generation of RPG teams.
   Therefore, this solution does not mean to be scalable nor concurrent.
 
 Note: You can run tests for all services with this script: <br />
-* $ ./run_tests_all_services.sh
+* $ ./services/run_tests_all_services.sh
 <br /> <br />
 
 
