@@ -4,12 +4,12 @@ Teams Generator Services
 Some microservices related to the generation of RPG teams.
 This project uses AWS S3 and System Params. <br /> <br />
 
-	General version: 0.1.6
+	General version: 0.1.7
 	author: Joan A. Pinol
 	author_nickname: japinol
 	author_gitHub: japinol7
 	author_twitter: @japinol
-	Python requires: 3.12 or greater.
+	Python requires: 3.13 or greater.
 
 See the readme.md file on the Services readme file for more details.
 <br /> <br />
