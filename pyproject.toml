@@ -1,0 +1,11 @@
+[project]
+name = "teams-generator-services"
+version = "0.1.7"
+description = "teams-generator-services"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "boto3>=1.37.36",
+    "pytest>=8.3.5",
+    "pytest-mock>=3.14.0",
+]
